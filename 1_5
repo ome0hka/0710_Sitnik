@@ -1,0 +1,60 @@
+#!/bin/bash
+mkdir cities
+
+cd cities
+
+mkdir Moscow Paris London Tokyo NewYork Sydney Berlin Rome Madrid Dubai
+
+for city in Moscow Paris London Tokyo NewYork Sydney Berlin Rome Madrid Dubai
+do
+  cd $city
+  touch sight1.txt sight2.txt sight3.txt sight4.txt sight5.txt
+  touch restaurant1.txt restaurant2.txt restaurant3.txt restaurant4.txt restaurant5.txt
+  touch shop1.txt shop2.txt shop3.txt shop4.txt shop5.txt
+  cd ..
+done
+
+cd ..
+
+mkdir languages
+
+cd languages
+
+touch language.java language.js language.py language.rb language.php language.html language.css language.swift language.kt language.rs
+
+
+cd ..
+
+mkdir utilities
+
+for utility in util1 util2 util3
+do
+  mkdir utilities/$utility
+  cd utilities/$utility
+  touch requirements.txt deprecated.txt uses.txt features.json
+  cd ../..
+done
+
+rm utilities/**/deprecated.txt
+
+mkdir project
+cd project
+
+mkdir src dst temp resources
+
+cd resources
+touch user.png admin.png customer.png
+
+cd ../temp
+touch user.txt root.txt stud.txt
+
+cp user.txt root.txt stud.txt ../src
+
+cd ../dst
+touch bundle.txt
+
+cd ..
+
+tar cf project_archive.tar dst resources
+
+
